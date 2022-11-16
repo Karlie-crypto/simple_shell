@@ -1,0 +1,104 @@
+.\" manpage for K-shell. Simple shell project to Holberton School.
+.\" Contact AUTHORS to correct errors or typos.
+.TH k_shell 0 "13 April 2020" "1.0" "Kayman-shell man page"
+
+.SH NAME
+k_shell \- Kayman-shell
+
+.SH PROLOG
+Kayman-shell (k_shell) it is a tiny but efficient interface line comands developed for Holberton School students.The Linux implementation of this interface may differ (consult our wiki page ##include link## for a correct installations), or the interface may not be implemented on Linux.
+
+.SH SYSNOPSIS
+k_shell
+
+.SH DESCRIPTION
+The utility of k_shell is that it is a command language interpreter that executes commands read from a command line string, standard input, or a specified file.
+
+.SH OPTIONS
+If there are no operands k_shell shall read commands from the standard input. there are no operands and the shell's standard input and standard error are attached to a terminal, the shell is considered to be interactive.
+
+.SH OPERANDS
+Operands don't shall be supported by k_shell
+
+.SH STDIN
+The standard input shall be used if one of the following is true:
+The script executes one or more commands that require input from standard input (such as a read command that does not redirect its input).
+
+.SH INPUT FILES
+Input files not supported
+
+.SS ENVIROMENT VARIABLES
+*ENV  This variable, when and only when an interactive shell is invoked  and the resulting value shall be used as a pathname of a file containing shell commands to execute in the current environment. The file need not be executable. If the expanded value of ENV is not an absolute pathname, the results are unspecified. ENV shall be ignored if the real and effective user IDs or real and effective group IDs of the process are different.
+.br
+*HOME
+Determine the pathname of the user's home directory.
+.br
+*LANG
+Provide a default value for the internationalization variables that are unset or null.
+.br 
+*PATH
+Establish a string formatted 
+.br
+.IP *PWD
+This variable shall represent an absolute pathname of the current working directory. Assignments to this variable may be ignored.
+ 
+
+.SH ASYNCHRONOUS EVENTS
+ The sh utility shall take the standard action for all signals. If the shell is interactive, SIGINT signals received during command line editing shall be handled as described in the EXTENDED DESCRIPTION, and SIGINT signals received at other times shall be caught but no action performed.
+
+.SH STDOUT
+See \fBSTDERR
+
+.SH STDERR
+Except as otherwise stated (by the descriptions of any invoked utilities or in interactive mode), standard error shall be used only for diagnostic messages.
+
+.SH OUTPUT FILES
+None
+
+.SH APPLICATION USAGE
+k_shell can be executed int two modes:
+
+.B *Interactive mode:
+.br ./hsh
+
+.B *Non interactive mode:
+.br echo "/bin/ls" | ./hsh 
+
+.SH EXAMPLES
+.B 1. Non interactice mode example:
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+
+2. Interactice mode example:
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+
+.SH FUTURE DIRECTIONS
+None
+
+.SH SEE ALSO
+acces(2), chdir(2), close (2), closedir(2), execve(2), exit(3), _exit(2), fflush(3), fork(2), free(3), getcwd(3), getline(3) 
+isatty(3), kill(2), malloc(3), open(2), opendir(3), perror(3), read(2), readdir(3), signal(2), stat(2), lstat(2), fstat(2) 
+strtok(3), wait(2), waitpid(2), wait3(2), wait4(2), write(2).
+
+.SH COPYRIGHT
+See AUTHORS
+
+.SH AUTHORS
+.B Tekenatei Franklyn
+.br
+.B Karlie Moyo
+.br
